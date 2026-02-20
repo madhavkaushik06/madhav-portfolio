@@ -21,18 +21,26 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 18 },
-  show: (i = 0) => ({
+  show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.08 * i, duration: 0.55, ease: "easeOut" },
+    transition: {
+      delay: 0.08 * i,
+      duration: 0.55,
+      ease: [0.16, 1, 0.3, 1], // smooth "easeOut"-like curve
+    },
   }),
 };
 
-const reveal = {
+const reveal: Variants = {
   hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 export default function Home() {
