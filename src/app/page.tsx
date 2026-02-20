@@ -3,6 +3,8 @@
 import Image from "next/image";
 import AiBackground from "@/components/AiBackground";
 import { motion } from "framer-motion";
+
+import type { Variants } from "framer-motion";
 import {
   ArrowUpRight,
   Copy,
